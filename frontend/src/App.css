@@ -1,0 +1,528 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #172b4d;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #172b4d;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Navigation header */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px max(6%, calc((100% - 1180px) / 2));
+  background: #ffffff;
+  border-bottom: 1px solid #e7ecf3;
+}
+
+.header h1 {
+  margin: 0;
+  color: #155eef;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.header p {
+  margin: 5px 0 0;
+  color: #718096;
+  font-size: 13px;
+}
+
+.header::after {
+  content: 'CITIZEN SERVICES';
+  color: #155eef;
+  background: #edf4ff;
+  padding: 10px 15px;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Main content */
+
+.container {
+  width: 90%;
+  max-width: 1180px;
+  margin: 32px auto 50px;
+}
+
+.welcome {
+  position: relative;
+  overflow: hidden;
+  padding: 42px;
+  margin-bottom: 28px;
+  color: white;
+  background: linear-gradient(120deg, #1246a0, #2479ee);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px #155eef20;
+}
+
+.welcome::after {
+  content: '🏙️';
+  position: absolute;
+  right: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(55px, 9vw, 100px);
+  opacity: 0.9;
+}
+
+.welcome h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 12px;
+  max-width: 650px;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.welcome p {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  color: #e1edff;
+  line-height: 1.7;
+}
+
+.welcome strong {
+  color: white;
+}
+
+/* Panels and forms */
+
+.panel {
+  padding: 30px;
+  margin-bottom: 26px;
+  background: #ffffff;
+  border: 1px solid #e8edf5;
+  border-radius: 16px;
+  box-shadow: 0 5px 22px #172b4d08;
+}
+
+.panel h2 {
+  margin: 0 0 22px;
+  color: #172b4d;
+  font-size: 21px;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+}
+
+label {
+  display: block;
+  margin: 18px 0 8px;
+  color: #344563;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 13px 14px;
+  color: #172b4d;
+  background: #fbfcfe;
+  border: 1px solid #dce3ee;
+  border-radius: 9px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9aa8ba;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background: #ffffff;
+  border-color: #4285f4;
+  box-shadow: 0 0 0 3px #4285f41c;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 115px;
+  line-height: 1.6;
+}
+
+button {
+  margin-top: 22px;
+  padding: 13px 22px;
+  color: #ffffff;
+  background: #155eef;
+  border: none;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: #1048bd;
+  transform: translateY(-1px);
+}
+
+button:focus-visible {
+  outline: 3px solid #8bb8ff;
+  outline-offset: 3px;
+}
+
+/* Messages */
+
+[role='status'] {
+  padding: 13px 15px;
+  margin-top: 18px;
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 9px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Complaint cards */
+
+.issue {
+  padding: 22px;
+  margin-top: 16px;
+  background: #ffffff;
+  border: 1px solid #e4eaf3;
+  border-left: 4px solid #4285f4;
+  border-radius: 12px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.issue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px #172b4d0c;
+}
+
+.issue h3 {
+  margin: 0 0 14px;
+  color: #172b4d;
+  font-size: 17px;
+}
+
+.issue p {
+  color: #66758b;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.issue p strong {
+  color: #344563;
+}
+
+.status {
+  display: inline-block;
+  padding: 7px 12px;
+  color: #925b00;
+  background: #fff4d6;
+  border: 1px solid #ffe6a0;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+/* Footer */
+
+footer {
+  padding: 25px 15px;
+  color: #718096;
+  background: #ffffff;
+  border-top: 1px solid #e8edf5;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+  .header {
+    padding: 18px 5%;
+  }
+
+  .header h1 {
+    font-size: 23px;
+  }
+
+  .header p {
+    max-width: 230px;
+    line-height: 1.5;
+  }
+
+  .header::after {
+    content: 'CIVIC';
+    padding: 8px;
+    font-size: 9px;
+  }
+
+  .container {
+    width: 92%;
+    margin-top: 22px;
+  }
+
+  .welcome {
+    padding: 28px 23px;
+    border-radius: 15px;
+  }
+
+  .welcome::after {
+    right: 5%;
+    top: 15%;
+    font-size: 42px;
+    transform: none;
+    opacity: 0.35;
+  }
+
+  .welcome h2 {
+    font-size: 27px;
+  }
+
+  .panel {
+    padding: 22px 18px;
+    border-radius: 13px;
+  }
+
+  .panel h2 {
+    font-size: 19px;
+  }
+
+  .issue {
+    padding: 17px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+.status-overview {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.status-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+}
+
+.status-card h3 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  color: #2563eb;
+}
+
+.status-card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.issues-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .status-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.dashboard-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.dashboard-nav button {
+  background: #eaf1ff;
+  color: #1d4ed8;
+}
+
+.dashboard-nav button.active-nav {
+  background: #2563eb;
+  color: white;
+}
+
+.status-overview {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.status-card {
+  padding: 18px 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.status-card h3 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  color: #2563eb;
+}
+
+.status-card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.status-label {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.issues-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.app-message {
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #1e40af;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .status-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Government dashboard statistics */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.stat-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e0e7e3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card h3 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  color: #52615a;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #18794e;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.section-heading h2 {
+  margin-right: auto;
+}
+
+.section-heading label {
+  margin: 0;
+}
+
+.issue select {
+  max-width: 100%;
+  margin-top: 8px;
+}
+
+.issue {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 800px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 450px) {
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: stretch;
+  }
+}
